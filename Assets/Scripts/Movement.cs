@@ -7,10 +7,15 @@ public class Movement : MonoBehaviour
 
     private Vector3 moveDirection = Vector3.zero;
 
+    public int hitpoints;
+    public int initialHitpoints;
+
+    public float walkSpeed;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        hitpoints = initialHitpoints;
     }
 
     void OnMove(InputValue value)
@@ -23,7 +28,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody>().linearVelocity = moveDirection * 5f;
+        GetComponent<Rigidbody>().linearVelocity = moveDirection * walkSpeed;
         
     }
 }
